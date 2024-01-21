@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <p>Search Movie</p>
-      <input type="text"  onChange={(e)=>setSearched(e.target.value)}value={search} />
+      <input type="text"  onChange={(e)=>setSearched(e.target.value)}value={searched} />
       <button onClick={handleSearch}> Search</button>
       {search ? (
         <div>

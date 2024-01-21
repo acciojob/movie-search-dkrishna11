@@ -4,16 +4,19 @@ import { movies } from "./movies";
 
 const App = () => {
   const [search, setSearch] = useState();
+  const [searched, setSearched] = useState();
 
   function handleSearch() {
     const serchedMovie = [...movies].filter((movie) =>
-      movie.name.toLowerCase().includes(search)
+      movie.name.toLowerCase().includes(searched)
     );
     setSearch(serchedMovie);
   }
   return (
     <div>
-      <input type="text" onChange={handleSearch} value={search} />
+      <p>Search Movie</p>
+      <input type="text"  onChange={(e)=>setSearched(e.target.value)}value={search} />
+      <button onClick={handleSearch}> Search</button>
       {search ? (
         <div>
           {search.map((movie, index) => (
